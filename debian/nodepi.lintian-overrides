@@ -1,0 +1,6 @@
+nodepi: dir-or-file-in-opt *
+nodepi: extra-license-file *
+nodepi: init.d-script-not-marked-as-conffile *
+nodepi: init.d-script-not-included-in-package *
+nodepi: script-not-executable *
+nodepi: unusual-interpreter *

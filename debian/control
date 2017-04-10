@@ -1,0 +1,16 @@
+Source: nodepi
+Section: contrib/utils
+Priority: optional
+Maintainer: maintainers <maintainers@example.com>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.6
+Homepage: https://github.com/carpie/nodepi
+Vcs-Browser: https://github.com/carpie/nodepi
+
+Package: nodepi
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Example of installing a standalone node.js version on a Raspberry Pi
+ This package provides a sample of a way to install a standalone version of
+ node.js on a Raspberry Pi.  This installation method does not affect any
+ other node.js installations.

@@ -1,0 +1,13 @@
+[Unit]
+Description=nodepi - example node installation for Raspberry Pi
+After=network.target
+
+[Service]
+ExecStart=/opt/nodepi/nodepi.sh
+StandardOutput=journal
+User=pi
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

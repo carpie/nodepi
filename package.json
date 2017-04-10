@@ -1,0 +1,27 @@
+{
+  "name": "nodepi",
+  "version": "1.0.0",
+  "description": "Example of a way to deploy a standalone node service to a Raspberry Pi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carpie/nodepi.git"
+  },
+  "keywords": [
+    "raspberrypi",
+    "nodejs",
+    "debian"
+  ],
+  "author": "elcarpie@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carpie/nodepi/issues"
+  },
+  "homepage": "https://github.com/carpie/nodepi#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
