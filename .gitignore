@@ -1,7 +1,2 @@
 *.swp
 node_modules/
-# debian artifacts
-debian/*debhelper*
-debian/files
-debian/*.substvars
-debian/nodepi/

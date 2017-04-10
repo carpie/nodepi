@@ -5,7 +5,8 @@
 NAME = nodepi
 VERSION ?= 1.0.0
 DESTDIR ?= /
-TAR_INCLUDES = Makefile src/ node_modules/
+TAR_SRC = src node_modules/
+TAR_DEB = Makefile
 PKG_DIR = /opt/$(NAME)
 
 .PHONY: default deb orig install
@@ -18,13 +19,19 @@ deb: orig
 	debuild -us -uc -i -b --lintian-opts --profile debian
 
 orig:
-	tar zcf ../$(NAME)_$(VERSION).orig.tar.gz $(TAR_INCLUDES)
+	tar zcf ../$(NAME)_$(VERSION).orig.tar.gz -C ../.. $(TAR_SRC)
+	tar zcf ../$(NAME)_$(VERSION).orig.tar.gz $(TAR_DEB)
 
 install:
 	mkdir -p $(DESTDIR)/$(PKG_DIR)
-	cp -r node_modules $(DESTDIR)/$(PKG_DIR)
-	cp -r src $(DESTDIR)/$(PKG_DIR)
+	cp -r ../../node_modules $(DESTDIR)/$(PKG_DIR)
+	cp -r ../../src $(DESTDIR)/$(PKG_DIR)
 	cp debian/nodepi.sh $(DESTDIR)/$(PKG_DIR)
 	mkdir -p $(DESTDIR)/lib/systemd/system
 	cp debian/nodepi.service $(DESTDIR)/lib/systemd/system/
 
+deb-clean:
+	debuild clean
+	rm -f ../$(NAME)_$(VERSION)*.build
+	rm -f ../$(NAME)_$(VERSION)*.changes
+	rm -f ../$(NAME)_$(VERSION)*.tar.gz

@@ -1,0 +1,9 @@
+# debian artifacts
+nodepi/debian/*debhelper*
+nodepi/debian/files
+nodepi/debian/*.substvars
+nodepi/debian/nodepi/
+*.tar.gz
+*.build
+*.changes
+*.deb
